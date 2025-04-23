@@ -31,7 +31,7 @@ export default function BillbuckzPage() {
                   <div className="flex items-center gap-2 mb-4">
                     <div className="relative h-10 w-10 overflow-hidden">
                       <Image
-                        src="/bill-buckz/cashbucks-icon.png"
+                        src="/bill-buckz-app/cashbucks-icon.png"
                         alt="Billbuckz Logo"
                         width={40}
                         height={40}
@@ -66,7 +66,7 @@ export default function BillbuckzPage() {
                         className="relative h-8 w-8 overflow-hidden rounded-full border-2 border-background"
                       >
                         <Image
-                          src={`/bill-buckz/cashbucks-icon.png`}
+                          src={`/bill-buckz-app/cashbucks-icon.png`}
                           alt={`User ${i}`}
                           width={32}
                           height={32}
@@ -85,7 +85,7 @@ export default function BillbuckzPage() {
               <div className="relative mx-auto max-w-sm lg:max-w-none">
                 <div className="relative h-[600px] w-[300px] overflow-hidden rounded-[40px] border-[8px] border-muted bg-background shadow-xl">
                   <Image
-                    src="/bill-buckz/screen-1.png"
+                    src="/bill-buckz-app/screen-1.png"
                     alt="Billbuckz App Screenshot"
                     fill
                     className="object-contain pt-3"
@@ -306,7 +306,7 @@ export default function BillbuckzPage() {
                 <div className="flex justify-center gap-6 overflow-hidden">
                   <div className="relative h-[500px] w-[250px] overflow-hidden rounded-[30px] border-[8px] border-muted bg-background shadow-lg">
                     <Image
-                      src="/bill-buckz/cashback-screen.png"
+                      src="/bill-buckz-app/cashback-screen.png"
                       alt="Cashback Screen"
                       fill
                       className="object-contain p-1"
@@ -314,7 +314,7 @@ export default function BillbuckzPage() {
                   </div>
                   <div className="relative hidden md:block h-[500px] w-[250px] overflow-hidden rounded-[30px] border-[8px] border-muted bg-background shadow-lg">
                     <Image
-                      src="/bill-buckz/screen-3.png"
+                      src="/bill-buckz-app/screen-3.png"
                       alt="Upload Receipt Screen"
                       fill
                       className="object-contain p-1"
@@ -322,7 +322,7 @@ export default function BillbuckzPage() {
                   </div>
                   <div className="relative hidden lg:block h-[500px] w-[250px] overflow-hidden rounded-[30px] border-[8px] border-muted bg-background shadow-lg">
                     <Image
-                      src="/bill-buckz/screen 4.png"
+                      src="/bill-buckz-app/screen-4.png"
                       alt="Rewards Screen"
                       fill
                       className="object-contain p-1"
@@ -335,7 +335,7 @@ export default function BillbuckzPage() {
                 <div className="flex justify-center gap-6 overflow-hidden">
                   <div className="relative h-[500px] w-[250px] overflow-hidden rounded-[30px] border-[8px] border-muted bg-background shadow-lg">
                     <Image
-                      src="/bill-buckz/screen-1.png"
+                      src="/bill-buckz-app/screen-1.png"
                       alt="Shop Map Screen"
                       fill
                       className="object-contain p-1"
@@ -343,7 +343,7 @@ export default function BillbuckzPage() {
                   </div>
                   <div className="relative hidden md:block h-[500px] w-[250px] overflow-hidden rounded-[30px] border-[8px] border-muted bg-background shadow-lg">
                     <Image
-                      src="/bill-buckz/screen-2.png"
+                      src="/bill-buckz-app/screen-2.png"
                       alt="Shop Details Screen"
                       fill
                       className="object-contain p-1"
@@ -524,7 +524,7 @@ export default function BillbuckzPage() {
                 <div className="relative mx-auto">
                   <div className="relative h-[300px] w-[300px]">
                     <Image
-                      src="/bill-buckz/qr-bill-buckz.png"
+                      src="/bill-buckz-app/qr-bill-buckz.png"
                       alt="QR Code to download app"
                       width={300}
                       height={300}
