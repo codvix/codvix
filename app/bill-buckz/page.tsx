@@ -376,7 +376,7 @@ export default function BillbuckzPage() {
                   <div className="flex items-start gap-4 mb-4">
                     <div className="relative h-10 w-10 overflow-hidden rounded-full">
                       <Image
-                        src="/placeholder.svg?height=40&width=40&text=RS"
+                        src="/placeholder.svg?height=40&width=40"
                         alt="Rahul S."
                         width={40}
                         height={40}
