@@ -243,7 +243,7 @@ export default function Home() {
                   for everyday transactions.
                 </p>
                 <Link
-                  href="#"
+                  href="/bill-buckz"
                   className="inline-flex items-center text-sm font-medium text-primary"
                 >
                   Learn more
