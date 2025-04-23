@@ -698,7 +698,6 @@ export default function BillbuckzPage() {
                     Get help directly through the Billbuckz app for the fastest
                     response.
                   </p>
-                  <Button variant="outline">Open App</Button>
                 </CardContent>
               </Card>
             </div>
