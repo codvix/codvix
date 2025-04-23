@@ -1,107 +1,13 @@
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ChevronDown, Menu } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export default function Home() {
   return (
     <div className=" container mx-auto">
-      <header className="sticky mx-auto flex top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-            <Image
-              src="/Codvix-black.svg"
-              alt="Codvix Logo"
-              width={170}
-              height={32}
-            />
-          </Link>
-          <nav className="hidden md:flex items-center gap-6">
-            <Link
-              href="#about"
-              className="text-sm font-medium hover:text-primary transition-colors"
-            >
-              About Us
-            </Link>
-            <Link
-              href="#products"
-              className="text-sm font-medium hover:text-primary transition-colors"
-            >
-              Products
-            </Link>
-            <Link
-              href="#founders"
-              className="text-sm font-medium hover:text-primary transition-colors"
-            >
-              Founders
-            </Link>
-            <Link
-              href="#careers"
-              className="text-sm font-medium hover:text-primary transition-colors"
-            >
-              Careers
-            </Link>
-          </nav>
-          <div className="flex items-center gap-4">
-            <Button className="hidden md:flex">
-              <Link
-                href="#contact"
-                className="text-sm font-medium transition-colors"
-              >
-                Contact
-              </Link>
-            </Button>
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="outline" size="icon" className="md:hidden">
-                  <Menu className="h-5 w-5" />
-                  <span className="sr-only">Toggle menu</span>
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right">
-                <nav className="flex flex-col gap-4 mt-8 p-4">
-                  <Link
-                    href="#about"
-                    className="text-lg font-medium hover:text-primary transition-colors"
-                  >
-                    About Us
-                  </Link>
-                  <Link
-                    href="#products"
-                    className="text-lg font-medium hover:text-primary transition-colors"
-                  >
-                    Products
-                  </Link>
-                  <Link
-                    href="#founders"
-                    className="text-lg font-medium hover:text-primary transition-colors"
-                  >
-                    Founders
-                  </Link>
-                  <Link
-                    href="#careers"
-                    className="text-lg font-medium hover:text-primary transition-colors"
-                  >
-                    Careers
-                  </Link>
-
-                  <Button className="mt-4">
-                    <Link
-                      href="#contact"
-                      className="text-lg font-medium  transition-colors"
-                    >
-                      Contact
-                    </Link>
-                  </Button>
-                </nav>
-              </SheetContent>
-            </Sheet>
-          </div>
-        </div>
-      </header>
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted py-20 md:py-32">
@@ -130,7 +36,7 @@ export default function Home() {
                   src="/hero-2.png"
                   alt="Tech illustration"
                   fill
-                  className="object-cover"
+                  className="object-cover grayscale hover:grayscale-0 transition"
                   priority
                 />
               </div>
@@ -927,39 +833,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <footer className="border-t py-6 md:py-8">
-        <div className="container flex flex-col items-center justify-between gap-4 md:flex-row">
-          <div className="flex flex-col items-center gap-4 md:items-start md:gap-2">
-            <Link
-              href="/"
-              className="flex items-center gap-2 text-lg font-bold"
-            >
-              <Image
-                src="/Codvix-black.svg"
-                alt="Codvix Logo"
-                width={170}
-                height={32}
-              />
-            </Link>
-            <p className="text-center text-sm text-muted-foreground md:text-left">
-              © 2025 Codvix Tech Private Limited. All rights reserved.
-            </p>
-          </div>
-          <div className="flex flex-col items-center gap-4 md:flex-row md:items-start md:gap-6">
-            <nav className="flex gap-4 sm:gap-6">
-              <Link href="#" className="text-sm font-medium hover:underline">
-                Privacy Policy
-              </Link>
-              <Link href="#" className="text-sm font-medium hover:underline">
-                Terms of Service
-              </Link>
-              <Link href="#" className="text-sm font-medium hover:underline">
-                Cookie Policy
-              </Link>
-            </nav>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
