@@ -370,7 +370,7 @@ export default function Home() {
               <div className="flex flex-col items-center space-y-4 rounded-lg border p-6">
                 <div className="relative h-40 w-40 overflow-hidden rounded-full">
                   <Image
-                    src="/founder-1.svg"
+                    src="/subha.png"
                     alt="Subha Patra"
                     fill
                     className="object-cover"
@@ -434,10 +434,10 @@ export default function Home() {
               <div className="flex flex-col items-center space-y-4 rounded-lg border p-6">
                 <div className="relative h-40 w-40 overflow-hidden rounded-full">
                   <Image
-                    src="/founder-2.svg"
+                    src="/aditya.png"
                     alt="Aditya Naskar"
                     fill
-                    className="object-cover"
+                    className="object-cover scale-110"
                   />
                 </div>
                 <div className="text-center">
