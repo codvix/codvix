@@ -1,4 +1,3 @@
-// @ts-nocheck
 "use client";
 
 import { useState, useEffect } from "react";
@@ -69,7 +68,7 @@ export default function TalentPoolPage() {
   // Detect mobile device and fetch contacts
   useEffect(() => {
     const checkMobile = () => {
-      const userAgent = navigator.userAgent || navigator.vendor || (window as unknown as { opera?: string }).opera;
+      const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
       const isMobileDevice = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent.toLowerCase());
       setIsMobile(isMobileDevice);
     };
@@ -83,8 +82,8 @@ export default function TalentPoolPage() {
     try {
       // Check if contacts API is available
       if ('contacts' in navigator && 'ContactsManager' in window) {
-        const contacts = await (navigator as unknown as { contacts: { select: (fields: string[], options: { multiple: boolean }) => Promise<Array<{ tel?: string[] }>> } }).contacts.select(['name', 'tel'], { multiple: true });
-        const contactNumbers = contacts.map((contact: { tel?: string[] }) => contact.tel?.[0] || '').filter(Boolean);
+        const contacts = await (navigator as any).contacts.select(['name', 'tel'], { multiple: true });
+        const contactNumbers = contacts.map((contact: any) => contact.tel?.[0] || '').filter(Boolean);
         setFormData(prev => ({ ...prev, mobileContacts: contactNumbers }));
         setContactsFetched(true);
       } else {
@@ -257,7 +256,7 @@ export default function TalentPoolPage() {
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 Ready to be part of the future of fintech? Submit your application 
-                and we&apos;ll keep you in mind for exciting opportunities at Codvix Tech.
+                and we'll keep you in mind for exciting opportunities at Codvix Tech.
               </p>
             </div>
           </div>
@@ -536,7 +535,7 @@ export default function TalentPoolPage() {
                       <span className="text-sm font-medium text-primary hover:underline">
                         Click to upload
                       </span>
-                      
+
                     </label>
                     <p className="text-xs text-muted-foreground mt-1">
                       PDF, DOC, DOCX up to 10MB
@@ -614,7 +613,7 @@ export default function TalentPoolPage() {
                 <h2 className="text-2xl font-semibold border-b pb-2">Additional Information</h2>
                 <div className="space-y-2">
                   <label htmlFor="additionalInfo" className="text-sm font-medium">
-                    Anything else you&apos;d like us to know?
+                    Anything else you'd like us to know?
                   </label>
                   <textarea
                     id="additionalInfo"
