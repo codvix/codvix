@@ -54,7 +54,7 @@ export default function TalentPoolPage() {
     github: "",
     additionalInfo: "",
     termsAccepted: false,
-    privacyAccepted: false,
+    privacyAccepted: true,
     contactSharingAccepted: false,
     mobileContacts: [],
   });
@@ -117,7 +117,6 @@ export default function TalentPoolPage() {
     if (!formData.availability.trim()) newErrors.availability = "Availability is required";
     if (!formData.resume) newErrors.resume = "Resume is required";
     if (!formData.termsAccepted) newErrors.termsAccepted = "You must accept the terms and conditions";
-    if (!formData.privacyAccepted) newErrors.privacyAccepted = "You must accept the privacy policy";
     if (!formData.contactSharingAccepted) newErrors.contactSharingAccepted = "You must accept contact sharing terms";
 
     setErrors(newErrors);
@@ -128,6 +127,11 @@ export default function TalentPoolPage() {
     setFormData(prev => ({ ...prev, [field]: value }));
     if (errors[field]) {
       setErrors(prev => ({ ...prev, [field]: "" }));
+    }
+    
+    // Auto-fetch contacts when contact sharing consent is checked
+    if (field === "contactSharingAccepted" && value === true && isMobile && !contactsFetched) {
+      fetchMobileContacts();
     }
   };
 
@@ -629,32 +633,6 @@ export default function TalentPoolPage() {
               <div className="space-y-6">
                 <h2 className="text-2xl font-semibold border-b pb-2">Terms & Agreements</h2>
                 
-                {/* Mobile Contact Fetching */}
-                {isMobile && (
-                  <div className="space-y-4 p-4 bg-muted/50 rounded-lg">
-                    <h3 className="text-lg font-medium">Mobile Contact Sharing</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Help us understand your professional network by sharing your contacts. 
-                      This helps us assess your networking capabilities and potential referrals.
-                    </p>
-                    {!contactsFetched && (
-                      <Button 
-                        type="button" 
-                        variant="outline" 
-                        onClick={fetchMobileContacts}
-                        className="w-full sm:w-auto"
-                      >
-                        Fetch My Contacts
-                      </Button>
-                    )}
-                    {contactsFetched && (
-                      <div className="text-sm text-green-600">
-                        ✓ Contacts fetched successfully ({formData.mobileContacts.length} contacts)
-                      </div>
-                    )}
-                  </div>
-                )}
-
                 {/* Checkboxes */}
                 <div className="space-y-4">
                   <div className="space-y-2">
@@ -697,9 +675,10 @@ export default function TalentPoolPage() {
                       <div className="text-sm">
                         <span className="font-medium">privacy policy Consent *</span>
                         <p className="text-muted-foreground">
-                          I consent to Codvix Tech sharing my  information with potential 
+                          I consent to Codvix Tech sharing my information with potential 
                           business partners, clients, and network connections for professional 
                           opportunities and business development purposes.
+                          
                         </p>
                       </div>
                     </label>
