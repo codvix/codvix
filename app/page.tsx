@@ -523,8 +523,10 @@ export default function Home() {
                   specific openings, or send us your resume to be considered for
                   future opportunities.
                 </p>
-                <Button className="mt-6" size="lg">
-                  Join Our Talent Pool
+                <Button className="mt-6" size="lg" asChild>
+                  <Link href="/talent-pool">
+                    Join Our Talent Pool
+                  </Link>
                 </Button>
               </div>
               <div className="mt-8 grid gap-4 sm:grid-cols-2">

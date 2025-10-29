@@ -43,6 +43,12 @@ export default function Header() {
           >
             Careers
           </Link>
+          <Link
+            href="/talent-pool"
+            className="text-sm font-medium hover:text-primary transition-colors"
+          >
+            Join Us
+          </Link>
         </nav>
         <div className="flex items-center gap-4">
           <Button className="hidden md:flex">
@@ -85,6 +91,12 @@ export default function Header() {
                   className="text-lg font-medium hover:text-primary transition-colors"
                 >
                   Careers
+                </Link>
+                <Link
+                  href="/talent-pool"
+                  className="text-lg font-medium hover:text-primary transition-colors"
+                >
+                  Join Us
                 </Link>
 
                 <Button className="mt-4">

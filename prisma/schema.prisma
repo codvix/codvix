@@ -1,0 +1,81 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model TalentApplication {
+  id                    String   @id @default(cuid())
+  firstName             String
+  lastName              String
+  email                 String   @unique
+  phone                 String
+  currentPosition       String
+  company               String?
+  experience            String
+  skills                String
+  location              String
+  availability          String
+  salaryExpectation     String?
+  resumeFileName        String?
+  resumeUrl             String?
+  coverLetter           String?
+  portfolio             String?
+  linkedin              String?
+  github                String?
+  additionalInfo        String?
+  
+  // Terms and agreements
+  termsAccepted         Boolean  @default(false)
+  privacyAccepted       Boolean  @default(false)
+  contactSharingAccepted Boolean @default(false)
+  
+  // Mobile and device info
+  isMobileDevice        Boolean  @default(false)
+  userAgent             String?
+  submissionTime        DateTime @default(now())
+  
+  // Application status
+  status                ApplicationStatus @default(PENDING)
+  notes                 String?
+  
+  // Relations
+  mobileContacts        MobileContact[]
+  
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+  
+  @@map("talent_applications")
+}
+
+model MobileContact {
+  id                    String   @id @default(cuid())
+  talentApplicationId   String
+  contactName            String?
+  contactNumber          String
+  contactEmail           String?
+  isProfessional         Boolean  @default(false)
+  networkStrength        Int?     // 1-10 scale for network quality assessment
+  
+  // Relations
+  talentApplication      TalentApplication @relation(fields: [talentApplicationId], references: [id], onDelete: Cascade)
+  
+  createdAt              DateTime @default(now())
+  updatedAt              DateTime @updatedAt
+  
+  @@map("mobile_contacts")
+}
+
+enum ApplicationStatus {
+  PENDING
+  REVIEWING
+  SHORTLISTED
+  REJECTED
+  HIRED
+}
